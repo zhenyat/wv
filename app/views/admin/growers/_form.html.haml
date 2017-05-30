@@ -1,0 +1,31 @@
+.row
+  .col-md-6
+    = simple_form_for([:admin, @grower], html: {multipart: true}) do |f|
+      = f.error_notification message: t('messages.error_notification')
+
+      .form-inputs
+        = f.input :name
+        = f.input :title
+        = f.input :address
+        = f.input :phone
+        = f.input :url
+        = f.input :about
+        = f.input :description
+        .input-group-addon
+          = f.input :logo, as: :file
+          - if f.object.logo?
+            .input-group
+              = image_tag @grower.logo.thumb.url
+              .input-group-addon
+                = f.input :remove_logo, as: :boolean
+
+
+        = f.input :status, default: 1
+        /= render 'admin/shared/status_buttons', f: f
+
+      .form_actions
+        .row
+          .col-md-3
+            = f.submit t('actions.save'), class: 'btn btn-primary btn-block'
+          .col-md-3
+            = link_to t('actions.back'), admin_growers_path, class: 'btn btn-default btn-block'

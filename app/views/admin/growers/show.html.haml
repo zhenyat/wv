@@ -1,0 +1,22 @@
+%h1= t Grower.model_name.human
+%table.table.table-striped
+  %tbody
+    - @grower.attributes.each do |key, value|
+      - if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
+        //skip these attributes
+      -else
+        %tr
+          - if key == 'status'
+            %td= t 'status.status'
+            %td= status_mark @grower.status
+          - elsif key == 'logo'
+            %td= t 'logo'
+            %td= image_tag @grower.logo.thumb.url if @grower.logo?
+          -else
+            %td= t "activerecord.attributes.grower.#{key}"
+            %td= value
+
+.form_actions
+  .row
+    .col-md-2
+      = link_to t('actions.back'), admin_growers_path, class: 'btn btn-primary btn-block'

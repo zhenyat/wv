@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       namespace :admin do
         root 'panel#index'                                  # admin_root_path
         resources :users
+        resources :growers
         # 1: Add new admin resources before this line
       end
 
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
     namespace :admin do
       root 'panel#index'                                  # admin_root_path
       resources :users
+      resources :growers
       # 2: Add new admin resources before this line
     end
 
