@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529149607) do
+ActiveRecord::Schema.define(version: 20170530072949) do
 
   create_table "growers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                  null: false
@@ -26,6 +26,23 @@ ActiveRecord::Schema.define(version: 20170529149607) do
     t.datetime "updated_at",                            null: false
   end
 
+  create_table "plants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "grower_id"
+    t.string   "title_la",                                null: false
+    t.string   "title",                                   null: false
+    t.string   "hybrid_parentage"
+    t.integer  "kind",             limit: 1, default: 0,  null: false
+    t.integer  "zone_min",                   default: 1,  null: false
+    t.integer  "zone_max",                   default: 11, null: false
+    t.integer  "quantity",                   default: 1,  null: false
+    t.integer  "planted_in"
+    t.integer  "position"
+    t.integer  "status",           limit: 1, default: 0,  null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.index ["grower_id"], name: "index_plants_on_grower_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "role",            limit: 1, default: 0, null: false
     t.string   "last_name",                             null: false
@@ -39,4 +56,5 @@ ActiveRecord::Schema.define(version: 20170529149607) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "plants", "growers"
 end

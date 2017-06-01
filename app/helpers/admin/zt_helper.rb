@@ -16,4 +16,13 @@ module Admin::ZtHelper
       image_tag('admin/archive.png',   size: '12x15', alt: 'Archive')
     end
   end
+  
+  # Sets a range of years (when plants were sticked in)
+  def years_range
+    years = []
+    for year in 2005..Time.now.year do
+      years << year
+    end
+    years
+  end
 end

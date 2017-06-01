@@ -1,0 +1,26 @@
+.row
+  .col-md-6
+    = simple_form_for([:admin, @plant], html: {multipart: true}) do |f|
+      = f.error_notification message: t('messages.error_notification')
+
+      .form-inputs
+        = f.association :grower, include_blank: false
+        = f.input       :title_la
+        = f.input       :title
+        = f.input       :hybrid_parentage
+        = f.input       :kind, include_blank: false
+        = f.input       :zone_min, collection: [1,2,3,4,5,6,7,8,9,10,11], include_blank: false
+        = f.input       :zone_max, collection: [1,2,3,4,5,6,7,8,9,10,11], include_blank: false
+        = f.input       :quantity
+        = f.input       :planted_in, collection: years_range
+        = f.input       :position, as: :hidden
+
+        = f.input :status, default: 1
+        /= render 'admin/shared/status_buttons', f: f
+
+      .form_actions
+        .row
+          .col-md-3
+            = f.submit t('actions.save'), class: 'btn btn-primary btn-block'
+          .col-md-3
+            = link_to t('actions.back'), admin_plants_path, class: 'btn btn-default btn-block'
