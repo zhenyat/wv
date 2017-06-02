@@ -1,0 +1,31 @@
+.row
+  .col-md-6
+    = simple_form_for([:admin, @picture], html: {multipart: true}) do |f|
+      = f.error_notification message: t('messages.error_notification')
+
+      .form-inputs
+        = f.association :plant, include_blank: false
+        = f.input :kind, include_blank: false
+        = f.input :title
+        = f.input :content
+        /= f.input :photo
+        = f.input :taken_at
+        = f.input :position, as: :hidden
+
+        .input-group-addon
+          = f.input :photo, as: :file
+          - if f.object.photo?
+            .input-group
+              = image_tag @picture.photo.thumb.url
+              .input-group-addon
+                = f.input :remove_photo, as: :boolean
+
+        = f.input :status, default: 1
+        /= render 'admin/shared/status_buttons', f: f
+
+      .form_actions
+        .row
+          .col-md-3
+            = f.submit t('actions.save'), class: 'btn btn-primary btn-block'
+          .col-md-3
+            = link_to t('actions.back'), admin_pictures_path, class: 'btn btn-default btn-block'

@@ -16,6 +16,28 @@
             %td= t "activerecord.attributes.plant.#{key}"
             %td= value
 
+- if @plant.pictures.present?
+  %h3= 'Pictures'
+  %table.table.table-hover.table-condensed
+    %thead
+      %tr
+        %th= Picture.human_attribute_name(:title)
+        %th= Picture.human_attribute_name(:photo)
+        %th= Picture.human_attribute_name(:kind)
+        %th= Picture.human_attribute_name(:status)
+        %th= t 'actions.actions'
+    - @plant.pictures.each do |picture|
+      %tr
+        %td= picture.title
+        %td= image_tag picture.photo.thumb.url
+        %td= picture.kind
+        %td= picture.status
+        %td
+          = link_to t('actions.show'), admin_picture_path(picture.id),      class: 'btn btn-primary btn-xs'
+          = link_to t('actions.edit'), edit_admin_picture_path(picture.id), class: 'btn btn-warning btn-xs'
+  
+    
+
 .form_actions
   .row
     .col-md-2

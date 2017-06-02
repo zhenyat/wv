@@ -1,0 +1,22 @@
+%h1= t Picture.model_name.human
+%table.table.table-striped
+  %tbody
+    - @picture.attributes.each do |key, value|
+      - if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
+        //skip these attributes
+      -else
+        %tr
+          - if key == 'status'
+            %td= t 'status.status'
+            %td= status_mark @picture.status
+          - elsif key == 'photo'
+            %td= t 'photo'
+            %td= image_tag @picture.photo.preview.url if @picture.photo?
+          -else
+            %td= t "activerecord.attributes.picture.#{key}"
+            %td= value
+
+.form_actions
+  .row
+    .col-md-2
+      = link_to t('actions.back'), admin_pictures_path, class: 'btn btn-primary btn-block'

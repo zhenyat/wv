@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530072949) do
+ActiveRecord::Schema.define(version: 20170601145200) do
 
   create_table "growers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                  null: false
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 20170530072949) do
     t.integer  "status",      limit: 1,     default: 0, null: false
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+  end
+
+  create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "plant_id"
+    t.integer  "kind",       limit: 1,     default: 1, null: false
+    t.string   "title",                                null: false
+    t.text     "content",    limit: 65535
+    t.string   "photo"
+    t.date     "taken_at"
+    t.integer  "position"
+    t.integer  "status",     limit: 1,     default: 0, null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.index ["plant_id"], name: "index_pictures_on_plant_id", using: :btree
   end
 
   create_table "plants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -56,5 +70,6 @@ ActiveRecord::Schema.define(version: 20170530072949) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "pictures", "plants"
   add_foreign_key "plants", "growers"
 end

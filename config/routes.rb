@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         resources :users
         resources :growers
         resources :plants
+        resources :pictures
         # 1: Add new admin resources before this line
       end
 
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
       resources :users
       resources :growers
       resources :plants
+      resources :pictures
       # 2: Add new admin resources before this line
     end
 
