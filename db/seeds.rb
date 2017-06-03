@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-if 1 == 2
 User.create role: 2, last_name: 'Dummy', first_name: 'Admin', email: 'dummy@mail.ru', password: '123123123', password_confirmation: '123123123'
 
 Grower.create name: 'iseli', title: 'Iseli Nursery', phone: '800-777-6202', 
@@ -47,5 +46,3 @@ Plant.create grower_id: grower_id, title_la: "Pinus parviflora 'Fukuzumi'",     
 Plant.create grower_id: grower_id, title_la: "Pinus sylvestris 'Hillside Creeper'",   title: "Scotch pine 'Hillside Creeper'",     kind: 1, zone_min: 2, zone_max: 8
 Plant.create grower_id: grower_id, title_la: "Pinus cembra  'Chalet'",                title: "Swiss stone pine 'Chalet'",          kind: 1, zone_min: 3, zone_max: 7
 Plant.create grower_id: grower_id, title_la: "Cryptomeria japonica 'Elegans Aurea'",  title: "Japanese cedar 'Elegans Aurea'",     kind: 1, zone_min: 5, zone_max: 9
-
-end
