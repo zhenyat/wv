@@ -49,9 +49,9 @@ class Admin::PicturesController < Admin::BaseController
 
   private
 
-    # Removes upload avatar directory of a destroyed Account
+    # Removes upload photo directory of a destroyed Picture
     def remove_photo_dir
-      dir = File.dirname(@picture.photo.current_path)
+      dir =  "public/uploads/picture/photo/#{@picture.id}"
       FileUtils.remove_dir dir if Dir.empty?(dir)
     end
 

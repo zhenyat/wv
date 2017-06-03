@@ -23,7 +23,7 @@ class Plant < ApplicationRecord
   has_many    :pictures
   before_save :set_position
 
-  enum kind:   %w(Decidious Evergreen Herbacious)
+  enum kind:   %w(decidious evergreen herbacious)
   enum status: %w(active archived)
 
   validates :grower,   presence: true

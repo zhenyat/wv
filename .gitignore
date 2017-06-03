@@ -36,5 +36,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# Uploads
+/public/uploads
 
 vendor/bundle

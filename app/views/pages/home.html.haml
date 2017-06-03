@@ -1,1 +1,24 @@
-%h1 Home page: TBD
+%h1 Welcome to West Virginia Dacha!
+
+- if @decidious_plants.present?
+  %h2= 'Decidious Plants'
+  %table.table
+    - @decidious_plants.each do |plant|
+      - if plant.pictures.present?
+        %tr
+          %td= plant.title
+        %tr
+          - plant.pictures.each do |picture|
+            %td= image_tag picture.photo.preview.url
+    
+- if @evergreen_plants.present?
+  %h2= 'Evergreen Plants'
+  %table.table
+    - @evergreen_plants.each do |plant|
+      - if plant.pictures.present?
+        %tr
+          %td= plant.title
+        %tr
+          - plant.pictures.each do |picture|
+            %td= image_tag picture.photo.preview.url
+

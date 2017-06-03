@@ -51,7 +51,7 @@ class Admin::GrowersController < Admin::BaseController
 
     # Removes upload avatar directory of a destroyed Account
     def remove_logo_dir
-      dir = File.dirname(@grower.logo.current_path)
+      dir =  "public/uploads/grower/avatar/#{@grower.id}"
       FileUtils.remove_dir dir if Dir.empty?(dir)
     end
 
