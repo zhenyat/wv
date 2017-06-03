@@ -18,7 +18,7 @@
   %tbody
     - @plants.each do |plant|
       %tr
-        %td= image_tag plant.grower.logo.thumb.url
+        %td= image_tag plant.grower.logo.thumb.url if plant.grower.logo?
         %td= plant.title_la
         %td= plant.title
         %td= plant.hybrid_parentage
