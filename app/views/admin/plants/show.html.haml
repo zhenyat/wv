@@ -11,7 +11,7 @@
             %td= status_mark @plant.status
           - elsif key == 'grower_id'
             %td= 'Grower'
-            %td= image_tag @plant.grower.logo.thumb.url
+            %td= image_tag @plant.grower.logo.thumb.url if @plant.grower.logo?
           -else
             %td= t "activerecord.attributes.plant.#{key}"
             %td= value
