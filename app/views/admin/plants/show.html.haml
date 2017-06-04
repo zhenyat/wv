@@ -29,7 +29,7 @@
     - @plant.pictures.each do |picture|
       %tr
         %td= picture.title
-        %td= image_tag picture.photo.thumb.url
+        %td= image_tag picture.photo.thumb.url if picture.photo?
         %td= picture.kind
         %td= picture.status
         %td

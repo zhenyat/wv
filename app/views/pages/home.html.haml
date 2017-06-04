@@ -9,7 +9,7 @@
           %td= plant.title
         %tr
           - plant.pictures.each do |picture|
-            %td= image_tag picture.photo.preview.url
+            %td= image_tag picture.photo.preview.url if picture.photo?
     
 - if @evergreen_plants.present?
   %h2= 'Evergreen Plants'
@@ -20,5 +20,5 @@
           %td= plant.title
         %tr
           - plant.pictures.each do |picture|
-            %td= image_tag picture.photo.preview.url
+            %td= image_tag picture.photo.preview.url if picture.photo?
 
