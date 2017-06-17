@@ -6,10 +6,20 @@
 // Ref:  https://github.com/rafaelfranca/simple_form-bootstrap/blob/master/app/assets/stylesheets/application.css.scss
 @import "github";
 
+/*html {*/
+body { 
+  background: url(wallpapers/03.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   padding-top: 10px;
-  background-color: #ddd;
+  //background-color:rgba(0, 0, 0, 1.0);
   margin: 20px;
+  /*background-image: url(wallpapers/07.jpg);*/
 }
 
 .p-status {
