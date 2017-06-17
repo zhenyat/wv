@@ -3,9 +3,8 @@
   %thead
     %tr
       %th= Picture.human_attribute_name(:plant)
-      %th= Picture.human_attribute_name(:name)
+      %th= Picture.human_attribute_name(:kind)
       %th= Picture.human_attribute_name(:title)
-      %th= Picture.human_attribute_name(:cover)
       /%th= Picture.human_attribute_name(:content)
       %th= Picture.human_attribute_name(:photo)
       %th= Picture.human_attribute_name(:taken_at)
@@ -17,9 +16,8 @@
     - @pictures.each do |picture|
       %tr
         %td= picture.plant.title
-        %td= picture.name
+        %td= picture.kind
         %td= picture.title
-        %td= status_mark picture.cover?
         /%td= picture.content
         %td= image_tag picture.photo.thumb.url if picture.photo?
         %td= picture.taken_at

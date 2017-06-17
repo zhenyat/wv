@@ -128,13 +128,14 @@ module ApplicationHelper
   ##############################################################################
   # Selects a status mark to be displayed
   #
-  # 25.01.2016  Obsoleted (glyphicons to be used)
+  # 25.01.2016  Obsoleted (glyphicons to be used) ???
+  # 17.06.2017  Updated for boolean statuses
   ##############################################################################
-  def status_mark status
-    if status == 'active' || status == true
-      image_tag('admin/check_mark.png', size: '12x15', alt: 'Актив')
-    else
-      image_tag('admin/minus_mark.png', size: '12x15', alt: 'Архив')
-    end
-  end
+#  def status_mark status
+#    if status == 'active' || status == true
+#      image_tag('admin/check_mark.png', size: '12x15', alt: 'Актив')
+#    else
+#      image_tag('admin/minus_mark.png', size: '12x15', alt: 'Архив')
+#    end
+#  end
 end

@@ -10,7 +10,7 @@ module Admin::ZtHelper
 
   # Selects a status mark to be displayed
   def status_mark status
-    if status == 'active'
+    if status == 'active' || status == true
       image_tag('admin/checkmark.png', size: '12x15', alt: 'Active')
     else
       image_tag('admin/archive.png',   size: '12x15', alt: 'Archive')

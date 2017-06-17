@@ -39,8 +39,8 @@ Plant.create grower_id: grower_id, title_la: "Picea orientalis 'Aureospicata'", 
 Plant.create grower_id: grower_id, title_la: "Ginkgo biloba 'Saratoga'",              title: "Ginkgo tree 'Saratoga'",             kind: 0, zone_min: 4, zone_max: 8
 Plant.create grower_id: grower_id, title_la: "Viburnum carlesii",                     title: "Korean  spice viburnum",             kind: 0, zone_min: 4, zone_max: 7
 Plant.create grower_id: grower_id, title_la: "Viburnum x carlcephalum 'Cayuga'",      title: "Cayuga' iburnum",                    kind: 0, zone_min: 5, zone_max: 8, hybrid_parentage: "V. carlesii and V. x carlcephalum"
-Plant.create grower_id: grower_id, title_la: "Pinus densiflora 'Oculus Draconis'",    title: "Dragon's Eye' Japanese red pine",    kind: 0, zone_min: 5, zone_max: 8
-Plant.create grower_id: grower_id, title_la: "Acer palmatum 'Sango-kaku'",            title: "Coral Bark' Japanese maple",         kind: 0, zone_min: 4, zone_max: 8
+Plant.create grower_id: grower_id, title_la: "Pinus densiflora 'Oculus Draconis'",    title: "'Dragon's Eye' Japanese red pine",   kind: 0, zone_min: 5, zone_max: 8
+Plant.create grower_id: grower_id, title_la: "Acer palmatum 'Sango-kaku'",            title: "'Coral Bark' Japanese maple",        kind: 0, zone_min: 4, zone_max: 8
 Plant.create grower_id: grower_id, title_la: "Cercis canadensis 'Pink Heartbreaker'", title: "Weeping redbud 'Pink Heartbreaker'", kind: 1, zone_min: 5, zone_max: 7
 Plant.create grower_id: grower_id, title_la: "Pinus parviflora 'Fukuzumi'",           title: "Japanese white pine 'Fukuzumi'",     kind: 0, zone_min: 4, zone_max: 8
 Plant.create grower_id: grower_id, title_la: "Pinus sylvestris 'Hillside Creeper'",   title: "Scotch pine 'Hillside Creeper'",     kind: 1, zone_min: 2, zone_max: 8

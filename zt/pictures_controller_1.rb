@@ -1,7 +1,7 @@
 class Admin::PicturesController < Admin::BaseController
   before_action :set_picture, only: [:show, :edit, :update,:destroy]
   after_action  :remove_photo_dir, only: :destroy
-
+  
   def index
     @pictures = policy_scope(Picture)
   end
@@ -62,6 +62,6 @@ class Admin::PicturesController < Admin::BaseController
 
     # Only allows a trusted parameter 'white list' through
     def picture_params
-      params.require(:picture).permit(:plant_id, :name, :title, :cover, :content, :photo, :taken_at, :position, :status, :remove_photo)
+      params.require(:picture).permit(:plant_id, :kind, :title, :content, :photo, :taken_at, :position, :status, :remove_photo)
     end
 end

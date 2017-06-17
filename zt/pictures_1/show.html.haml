@@ -9,9 +9,6 @@
           - if key == 'status'
             %td= t 'status.status'
             %td= status_mark @picture.status
-          - elsif key == 'cover'
-            %td= t 'status.cover'
-            %td= status_mark @picture.cover?
           - elsif key == 'photo'
             %td= t 'photo'
             %td= image_tag @picture.photo.preview.url if @picture.photo?
