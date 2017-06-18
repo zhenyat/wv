@@ -1,0 +1,25 @@
+%h1= t Overview.model_name.human
+%table.table.table-striped
+  %tbody
+    - @overview.attributes.each do |key, value|
+      - if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at'
+        //skip these attributes
+      -else
+        %tr
+          - if key == 'status'
+            %td= t 'status.status'
+            %td= status_mark @overview.status
+          - elsif key == 'corousel'
+            %td= t 'status.corousel'
+            %td= status_mark @overview.corousel?
+          - elsif key == 'image'
+            %td= t 'image'
+            %td= image_tag @overview.image.preview.url if @overview.image?
+          -else
+            %td= t "activerecord.attributes.overview.#{key}"
+            %td= value
+
+.form_actions
+  .row
+    .col-md-2
+      = link_to t('actions.back'), admin_overviews_path, class: 'btn btn-primary btn-block'

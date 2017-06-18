@@ -1,5 +1,7 @@
 %h1 Welcome to West Virginia Dacha!
 
+= render("shared/carousel", images: @carousel_images) if @carousel_images.present?
+
 - if @decidious_plants.present?
   %h2= 'Decidious Plants'
   %table.table

@@ -1,0 +1,31 @@
+.row
+  .col-md-6
+    = simple_form_for([:admin, @overview], html: {multipart: true}) do |f|
+      = f.error_notification message: t('messages.error_notification')
+
+      .form-inputs
+        = f.input :name
+        = f.input :title
+        = f.input :carousel
+        = f.input :content
+        /= f.input :image
+        = f.input :taken_at
+        = f.input :position, as: :hidden
+
+        .input-group-addon
+          = f.input :image, as: :file
+          - if f.object.image?
+            .input-group
+              = image_tag @overview.image.thumb.url
+              .input-group-addon
+                = f.input :remove_image, as: :boolean
+
+        = f.input :status, default: 1
+        /= render 'admin/shared/status_buttons', f: f
+
+      .form_actions
+        .row
+          .col-md-3
+            = f.submit t('actions.save'), class: 'btn btn-primary btn-block'
+          .col-md-3
+            = link_to t('actions.back'), admin_overviews_path, class: 'btn btn-default btn-block'
