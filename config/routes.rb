@@ -20,7 +20,10 @@ Rails.application.routes.draw do
       end
 
       root   'pages#home'                                   # root_path
-
+      
+      get 'pages/deciduous'
+      get 'pages/evergreen'
+      get 'pages/herbacious'
     end
 
     # Root route is directed to default locale
@@ -48,6 +51,9 @@ Rails.application.routes.draw do
 
     root   'pages#home'                                   # root_path
 
+    get 'pages/deciduous'
+    get 'pages/evergreen'
+    get 'pages/herbacious'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

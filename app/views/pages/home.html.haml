@@ -2,25 +2,22 @@
 
 = render("shared/carousel", images: @carousel_images) if @carousel_images.present?
 
-- if @decidious_plants.present?
-  %h2= 'Decidious Plants'
-  %table.table
-    - @decidious_plants.each do |plant|
-      - if plant.pictures.present?
-        %tr
-          %td= plant.title
-        %tr
-          - plant.pictures.each do |picture|
-            %td= image_tag picture.photo.preview.url if picture.photo?
-    
-- if @evergreen_plants.present?
-  %h2= 'Evergreen Plants'
-  %table.table
-    - @evergreen_plants.each do |plant|
-      - if plant.pictures.present?
-        %tr
-          %td= plant.title
-        %tr
-          - plant.pictures.each do |picture|
-            %td= image_tag picture.photo.preview.url if picture.photo?
+= render "home_content"
 
+%table.table
+  %tr
+    %td.text-center
+      .wrapper
+        = link_to image_tag(@deciduous_cover.image.cover.url),  pages_deciduous_path
+        .description
+          %p.description_content= "Deciduous Plants"
+    %td.text-center
+      .wrapper
+        = link_to image_tag(@evergreen_cover.image.cover.url),  pages_evergreen_path
+        .description
+          %p.description_content= "Evergreen Plants"
+    %td.text-center
+      .wrapper
+        = link_to image_tag(@herbacious_cover.image.cover.url),  pages_herbacious_path
+        .description
+          %p.description_content= "Herbacious Plants"
