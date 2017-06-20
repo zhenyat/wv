@@ -62,6 +62,6 @@ class Admin::OverviewsController < Admin::BaseController
 
     # Only allows a trusted parameter 'white list' through
     def overview_params
-      params.require(:overview).permit(:name, :title, :carousel, :content, :image, :taken_at, :position, :status)
+      params.require(:overview).permit(:name, :title, :carousel, :content, :image, :taken_at, :position, :status, :remove_image)
     end
 end

@@ -7,17 +7,26 @@
 %table.table
   %tr
     %td.text-center
-      .wrapper
-        = link_to image_tag(@deciduous_cover.image.cover.url),  pages_deciduous_path
-        .description
-          %p.description_content= "Deciduous Plants"
+      - if @deciduous_cover.image.present?
+        .wrapper
+          = link_to image_tag(@deciduous_cover.image.cover.url),  pages_deciduous_path
+          .description
+            %p.description_content= "Deciduous Plants"
+      - else
+        = link_to "Deciduous Plants", pages_deciduous_path
     %td.text-center
-      .wrapper
-        = link_to image_tag(@evergreen_cover.image.cover.url),  pages_evergreen_path
-        .description
-          %p.description_content= "Evergreen Plants"
+      - if @evergreen_cover.image.present?
+        .wrapper
+          = link_to image_tag(@evergreen_cover.image.cover.url),  pages_evergreen_path
+          .description
+            %p.description_content= "Evergreen Plants"
+      - else
+        = link_to "Evergreen Plants", pages_evergreen_path
     %td.text-center
-      .wrapper
-        = link_to image_tag(@herbacious_cover.image.cover.url),  pages_herbacious_path
-        .description
-          %p.description_content= "Herbacious Plants"
+      - if @herbacious_cover.image.present?
+        .wrapper
+          = link_to image_tag(@herbacious_cover.image.cover.url),  pages_herbacious_path
+          .description
+            %p.description_content= "Herbacious Plants"
+      - else
+        = link_to "Herbacious Plants", pages_herbacious_path

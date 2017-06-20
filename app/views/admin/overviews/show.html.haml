@@ -9,9 +9,9 @@
           - if key == 'status'
             %td= t 'status.status'
             %td= status_mark @overview.status
-          - elsif key == 'corousel'
-            %td= t 'status.corousel'
-            %td= status_mark @overview.corousel?
+          - elsif key == 'carousel'
+            %td= t 'status.carousel'
+            %td= status_mark @overview.carousel?
           - elsif key == 'image'
             %td= t 'image'
             %td= image_tag @overview.image.preview.url if @overview.image?
