@@ -1,32 +1,32 @@
-%h1 Welcome!
+%h1 Welcome to West Virginia Dacha!
 
 = render("shared/carousel", images: @carousel_images) if @carousel_images.present?
 
 = render "home_content"
 
-.container-fluid
-  .row
-    .col-md-4
+%table.table
+  %tr
+    %td.text-center
       - if @deciduous_cover.image.present?
         .wrapper
           = link_to image_tag(@deciduous_cover.image.cover.url),  pages_deciduous_path
           .description
-            .text-center.description_content= "Deciduous Plants"
+            %p.description_content= "Deciduous Plants"
       - else
         = link_to "Deciduous Plants", pages_deciduous_path
-    .col-md-4
+    %td.text-center
       - if @evergreen_cover.image.present?
         .wrapper
           = link_to image_tag(@evergreen_cover.image.cover.url),  pages_evergreen_path
           .description
-            .text-center.description_content= "Evergreen Plants"
+            %p.description_content= "Evergreen Plants"
       - else
         = link_to "Evergreen Plants", pages_evergreen_path
-    .col-md-4
+    %td.text-center
       - if @herbacious_cover.image.present?
         .wrapper
           = link_to image_tag(@herbacious_cover.image.cover.url),  pages_herbacious_path
           .description
-            .text-center.description_content= "Herbacious Plants"
+            %p.description_content= "Herbacious Plants"
       - else
         = link_to "Herbacious Plants", pages_herbacious_path

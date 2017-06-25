@@ -1,2 +1,7 @@
 %h1= "Deciduous Plants"
-%h3= "This page is under contruction"
+
+- if @deciduous_plants.present?
+  /= render "shared/plants_with_cover", collection: @deciduous_plants
+  = render "shared/covers", collection: @deciduous_plants
+- else
+  %h3= "This page is under construction"

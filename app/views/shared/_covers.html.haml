@@ -1,0 +1,15 @@
+.container
+  - count = 0
+  - collection.each do |plant|
+    - if plant.pictures.present?
+      - if (count % 4).zero?
+        .row.form-group
+      - count += 1
+      - if plant.pictures.cover.present?
+        - if plant.pictures.cover.photo.present?
+          .col-3.col-sm-3.col-md-3.text-center
+            .img-responsive= image_tag plant.pictures.cover.photo.preview.url, size: "250x250"
+            .caption.text-center= plant.title
+      - else
+        .col-3.col-sm-3.col-md-3.text-center= image_tag plant.pictures.first.photo.preview.url, size: "250x250"
+        .caption.text-center= plant.title

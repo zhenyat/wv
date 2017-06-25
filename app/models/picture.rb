@@ -15,6 +15,7 @@
 #   status            - status:         enum { active (0) | archived (1) }
 #
 #  17.06.2017 ZT
+#  24.06.2017 scope added
 ################################################################################
 class Picture < ApplicationRecord
   belongs_to     :plant
@@ -28,6 +29,8 @@ class Picture < ApplicationRecord
   validates :name,  presence: true, uniqueness: true
   validates :title, presence: true
 
+  scope :cover, -> {find_by(cover: true)}
+  
   private
 
     # Revises cover status of pictures (only one *cover* picture is allowed for a plant)

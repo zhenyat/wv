@@ -1,14 +1,14 @@
 class PagesController < ApplicationController
   def deciduous
-    
+    @deciduous_plants  = Plant.deciduous
   end
   
   def evergreen
-    
+    @evergreen_plants  = Plant.evergreen
   end
   
   def herbacious
-    
+    @herbacious_plants = Plant.herbacious
   end
     
   def home

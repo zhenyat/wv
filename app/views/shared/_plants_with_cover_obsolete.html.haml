@@ -1,0 +1,23 @@
+%table.table
+  - collection.each do |plant|
+    - if plant.pictures.present?
+      - rowspan = 3
+      - rowspan += 1 if plant.planted_in.present?
+      - rowspan += 1 if plant.hybrid_parentage.present?
+      - cover_picture = plant.pictures.cover
+      %tr
+        - if plant.pictures.cover.present?
+          %td{:rowspan => rowspan}= image_tag plant.pictures.cover.photo.preview.url
+        - else
+          %td{:rowspan => rowspan}= image_tag plant.pictures.first.photo.preview.url
+        %td= "#{plant.title} (#{plant.title_la})"
+      %tr
+        %td= "Zones: #{plant.zone_min} - #{plant.zone_max}"
+      %tr
+        %td= "Number of plants: #{plant.quantity}"
+      %tr
+        %td= "Planted in: #{plant.planted_in}" if plant.planted_in.present?
+        /%td= "Planted in: #{plant.planted_in}" if plant.planted_in.present?
+    - else
+      /%h4= "No pictures for this plant"
+
