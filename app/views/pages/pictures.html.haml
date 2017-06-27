@@ -1,0 +1,21 @@
+.container
+  .container
+  %h1.text-center= "#{@plant.title}"
+  %h2.text-center= "(#{@plant.title_la})"
+  /.row= "Grower: #{@plant.grower.title}"
+  /.row= "Hybrid Parentage: #{@plant.hybrid_parentage}"
+  %h3.text-center= "USDA Zone: #{@plant.zone_min} - #{@plant.zone_max}"
+  /.row= "Number of plants: #{@plant.quantity}"
+  /.row= "Planted in: #{@plant.planted_in}"
+  
+  %br
+  - @pictures.each do |picture|
+    = link_to image_tag(picture.photo.preview.url, height: '200'), picture.photo.view.url, data: {lightbox: "example-set", title: picture.taken_at.strftime("%m/%d/%Y")}
+
+:javascript
+  // see: http://lokeshdhakar.com/projects/lightbox2/
+  lightbox.option({
+    'wrapAround':        true,
+    'albumLabel':        "Image %1 of %2",
+  })
+

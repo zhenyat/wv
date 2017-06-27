@@ -1,7 +1,6 @@
 %h1= "Deciduous Plants"
 
 - if @deciduous_plants.present?
-  /= render "shared/plants_with_cover", collection: @deciduous_plants
-  = render "shared/covers", collection: @deciduous_plants
+  = render "shared/covers", plants: @deciduous_plants
 - else
   %h3= "This page is under construction"

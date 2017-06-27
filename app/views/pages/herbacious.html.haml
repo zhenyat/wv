@@ -1,6 +1,6 @@
 %h1= "Herbacious Plants"
 
 - if @herbacious_plants.present?
-  = render "shared/plants_with_cover", collection: @herbaciousplants
+  = render "shared/plants_with_cover", plants: @herbaciousplants
 - else
   %h3= "This page is under construction"

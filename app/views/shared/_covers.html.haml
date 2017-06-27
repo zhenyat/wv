@@ -1,6 +1,6 @@
 .container
   - count = 0
-  - collection.each do |plant|
+  - plants.each do |plant|
     - if plant.pictures.present?
       - if (count % 4).zero?
         .row.form-group
@@ -8,8 +8,8 @@
       - if plant.pictures.cover.present?
         - if plant.pictures.cover.photo.present?
           .col-3.col-sm-3.col-md-3.text-center
-            .img-responsive= image_tag plant.pictures.cover.photo.preview.url, size: "250x250"
+            .img-responsive=  link_to image_tag(plant.pictures.cover.photo.preview.url, size: "250x250"), pages_pictures_path(plant_id: plant.id)
             .caption.text-center= plant.title
       - else
-        .col-3.col-sm-3.col-md-3.text-center= image_tag plant.pictures.first.photo.preview.url, size: "250x250"
+        .col-3.col-sm-3.col-md-3.text-center= link_to image_tag(plant.pictures.first.photo.preview.url, size: "250x250"), pages_pictures_path(plant_id: plant.id)
         .caption.text-center= plant.title

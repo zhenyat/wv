@@ -29,10 +29,12 @@
 #   13.02.2017  gem 'react-rails' added
 #   27.04.2017  Rails 5.0.2
 #   22.05.2017  Ruby 2.4.1 / RoR 5.0.3
+#   26.06.2017  RoR 5.0.4 (to update: bundle update rails)
+#   27.06.2017  gem 'lightbox2-rails' added
 ################################################################################
 source 'https://rubygems.org'
 ruby '2.4.1'
-gem 'rails', '~> 5.0.3'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.4'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 #gem 'sqlite3'                                   # Use sqlite3    as the database for Active Record
 #gem 'sqlite3', groups: [:test, :development]
@@ -79,6 +81,7 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
+gem 'lightbox2-rails'
 
 gem 'simple_form'                               # https://github.com/plataformatec/simple_form
 gem 'enum_help'
