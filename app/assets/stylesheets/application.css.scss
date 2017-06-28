@@ -8,6 +8,12 @@
 @import "github";
 
 /*html {*/
+@font-face {
+  font-family: "Aramis Italic";
+  src: font-url('Aramis_Italic.ttf'); // format('truetype');
+  /*src: url('/assets/Aramis_Italic');*/
+}
+
 body { 
   background: url(wallpapers/03.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -85,7 +91,29 @@ body {
 	font-size: 1.8em;
 }
 
-  
+.poetry {
+  font-family: "Aramis Italic", san-serif;
+  font-size: 1.9em;
+}
+.author {
+  font-family: "Aramis Italic", san-serif;
+  font-size: 1.5em; 
+
+}
+
+pre {
+  display:          block;
+  padding:          9.5px;
+  margin:           0 0 10px;
+  font-size:        13px;
+  line-height:      1.42857143;
+  color:            #333;
+  word-break:       break-all;
+  word-wrap:        break-word;
+  background-color: rgba(0,0,0,0.0); //#f5f5f5;
+  border:           0px solid #ccc;
+  border-radius:    4px;
+}
   /* Extending the Bootrstrap classes to cover all possible Flash types */
 /*
 .alert-alert {

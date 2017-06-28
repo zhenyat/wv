@@ -34,5 +34,7 @@ module Wv
     config.i18n.available_locales = %w(en ru)
     config.i18n.default_locale    = :en
     config.i18n.load_path        += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]  # YAML Multiple structure
+    config.assets.enabled = true
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end
