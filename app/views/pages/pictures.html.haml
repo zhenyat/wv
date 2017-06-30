@@ -10,7 +10,7 @@
   
   %br
   - @pictures.each do |picture|
-    = link_to image_tag(picture.photo.preview.url, height: '200'), picture.photo.view.url, data: {lightbox: "example-set", title: picture.taken_at.strftime("%m/%d/%Y")}
+    = link_to image_tag(picture.photo.preview.url, height: '200'), picture.photo.view.url, data: {lightbox: "example-set", title: picture_date(picture.taken_at)}
 
 :javascript
   // see: http://lokeshdhakar.com/projects/lightbox2/

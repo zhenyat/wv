@@ -12,6 +12,8 @@ class PagesController < ApplicationController
   end
   
   def home
+    @article = Article.first
+    
     @plants            = Plant.all
     @deciduous_plants  = Plant.deciduous
     @evergreen_plants  = Plant.evergreen

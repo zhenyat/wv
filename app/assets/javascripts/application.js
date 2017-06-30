@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require lightbox
+//= require ckeditor/init
 // require rainbow
 // require ruby
 //= require_tree .

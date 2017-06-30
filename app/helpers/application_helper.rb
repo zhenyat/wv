@@ -116,6 +116,21 @@ module ApplicationHelper
     end
   end
 
+  ##############################################################################
+  # Return a picture date in the format:
+  #   'Month d' (for current year) / 'Month d, year'
+  #
+  # 30.06.2017  ZT
+  ##############################################################################
+
+  def picture_date date
+    if date.year == Time.now.year
+      date.strftime ("%B %e")
+    else
+      date.strftime ("%B %e, %Y")
+    end
+  end
+  
   # Sorts array of objects by the Attribute (if passed)
   def sort_objects objects_array, attribute=nil
     if attribute.nil?
