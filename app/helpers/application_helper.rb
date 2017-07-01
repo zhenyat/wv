@@ -96,7 +96,7 @@ module ApplicationHelper
   end
 
   ##############################################################################
-  # Return a title on a per-page basis with localization
+  # Returns a title on a per-page basis with localization
   # Source:  Michael Hartl
   #
   # 15.12.2013  Created
@@ -117,7 +117,7 @@ module ApplicationHelper
   end
 
   ##############################################################################
-  # Return a picture date in the format:
+  # Returns a picture date in the format:
   #   'Month d' (for current year) / 'Month d, year'
   #
   # 30.06.2017  ZT
@@ -140,6 +140,11 @@ module ApplicationHelper
     end
   end
 
+  # Shuflles Articles and returns first one content 
+  def content_random articles 
+    articles.shuffle.first.content.to_json
+  end
+  
   ##############################################################################
   # Selects a status mark to be displayed
   #
