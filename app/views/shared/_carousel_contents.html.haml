@@ -1,0 +1,20 @@
+#text-carousel.carousel.slide.carousel-fade{"data-ride" => "carousel", "data-interval" => "10000"}
+  / Wrapper for slides
+  .carousel-inner
+    - @articles.each_with_index do |article, index|
+      - if index == 0
+        .item.active
+          .row
+            .col-xs-offset-4.col-xs-6
+              %p= raw article.content
+      - else
+        .item
+          .row
+            .col-xs-offset-4.col-xs-6
+              %p= raw article.content
+  
+  / Controls
+  -#%a.left.carousel-control{"data-slide" => "prev", :href => "#text-carousel"}
+    %span.glyphicon.glyphicon-chevron-left
+  -#%a.right.carousel-control{"data-slide" => "next", :href => "#text-carousel"}
+    %span.glyphicon.glyphicon-chevron-right

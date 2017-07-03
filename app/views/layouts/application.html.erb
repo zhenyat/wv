@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-<title>ZtAdminApp</title>
+    <title>ZtAdminApp</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
@@ -12,6 +12,16 @@
   <body>
     <%= render 'shared/top_navigation' %>
     <%= yield %>
+    <!--% if current_page? root_path %>
+      <div data-turbolinks-permanent>
+        <audio controls autoplay>
+          <source src="/audios/zt.m4a" type="audio/mpeg">
+        </audio>
+      </div>
+   <#% end %-->
+    <!--% if current_page? root_path %>
+      <%#= audio_tag "/audios/zt.m4a", :autoplay => true, :type => "audio/mp3", :controls => true, :loop => true, :data-turbolinks-permanent => true %>
+    <!--% end %-->
   </body>
 
   <%= render 'shared/footer' %>

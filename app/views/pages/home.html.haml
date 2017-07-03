@@ -1,9 +1,8 @@
 %h1 Welcome!
 
-= render("shared/carousel", images: @carousel_images) if @carousel_images.present?
-
-= render "home_content"
-
+= render("shared/carousel_images",   images:   @carousel_images) if @carousel_images.present?
+= render("shared/carousel_contents", articles: @articles)        if @articles.present?
+/= render "shared/content"
 .container-fluid
   .row
     .col-md-4
@@ -30,3 +29,7 @@
             .text-center.description_content= "Herbacious Plants"
       - else
         = link_to "Herbacious Plants", pages_herbacious_path
+
+- if current_page? root_path
+  .data-turbolinks-permanent= audio_tag "/audios/zt.m4a", :autoplay => true, :type => "audio/mp3", :controls => true, :loop => true
+/= audio_tag "/audios/glazunov.mp3", :autoplay => true

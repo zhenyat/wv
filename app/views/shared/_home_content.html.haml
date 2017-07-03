@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-md-offset-4.col-md-6#poem
+
+:javascript
+
+  var content = #{raw content_random(@articles)};
+  if (content === null) {
+    window.addEventListener('load', showPoem, false);
+  } else {
+    showPoem();
+  }
+
+  function showPoem() { 
+    var content = #{raw content_random(@articles)};
+    document.getElementById("poem").innerHTML=content;
+  }
+ 

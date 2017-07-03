@@ -1,0 +1,22 @@
+#text-carousel.carousel.slide{"data-ride" => "carousel"}
+  / Wrapper for slides
+  .row
+    .col-xs-offset-3.col-xs-6
+      .carousel-inner
+        .item.active
+          .carousel-content
+            %div
+              %p= raw @articles.first.content
+        .item
+          .carousel-content
+            %div
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, sint fuga temporibus nam saepe delectus expedita vitae magnam necessitatibus dolores tempore consequatur dicta cumque repellendus eligendi ducimus placeat!
+        .item
+          .carousel-content
+            %div
+              %p Sapiente, ducimus, voluptas, mollitia voluptatibus nemo explicabo sit blanditiis laborum dolore illum fuga veniam quae expedita libero accusamus quas harum ex numquam necessitatibus provident deleniti tenetur iusto officiis recusandae corporis culpa quaerat?
+  / Controls
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#text-carousel"}
+    %span.glyphicon.glyphicon-chevron-left
+  %a.right.carousel-control{"data-slide" => "next", :href => "#text-carousel"}
+    %span.glyphicon.glyphicon-chevron-right
