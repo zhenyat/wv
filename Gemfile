@@ -29,12 +29,20 @@
 #   13.02.2017  gem 'react-rails' added
 #   27.04.2017  Rails 5.0.2
 #   22.05.2017  Ruby 2.4.1 / RoR 5.0.3
-#   26.06.2017  RoR 5.0.4 (to update: bundle update rails)
-#   27.06.2017  gem 'lightbox2-rails' added
+#   28.06.2017  gem 'lightbox2-rails'
+#   12.07.2017  git_source
+#   27.07.2017  RoR 5.1.2; gem 'tzinfo-data' disabled 
+#   28.07.2017  bootstrap 4 as alternative
 ################################################################################
 source 'https://rubygems.org'
 ruby '2.4.1'
-gem 'rails', '~> 5.0.4'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
+gem 'rails', '~> 5.1.2'                         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 #gem 'sqlite3'                                   # Use sqlite3    as the database for Active Record
 #gem 'sqlite3', groups: [:test, :development]
@@ -78,11 +86,12 @@ gem "acts_as_list"                              # https://github.com/swanandp/ac
 # MH 3-rd Edition
 gem 'faker'
 #gem 'fog'
+#gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass'                            # bootstrap 3
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'bootstrap-sass'
-gem 'lightbox2-rails'
 
+gem 'lightbox2-rails'                           # https://github.com/gavinkflam/lightbox2-rails
 gem 'simple_form'                               # https://github.com/plataformatec/simple_form
 gem 'enum_help'
 
@@ -113,4 +122,4 @@ end
 # gem 'unicorn'                                 # Use Unicorn as the app server
 # gem 'capistrano-rails', group: :development   # Use Capistrano for deployment
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
