@@ -1,5 +1,6 @@
 ru:
   time:
+    formats:
       day:            '%-d'
       day_month:      '%-d %B'
       full:           '%A, %d %B %Y г., %H:%M:%S %z'
